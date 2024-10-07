@@ -17,7 +17,7 @@ export default function SignUp() {
   }
 
   return (
-    <div className="flex justify-end items-center min-h-screen bg-gradient-to-b from-[#F0725C] to-[#FE3511] h-screen animate-fadeIn">
+    <div className="flex justify-end items-center min-h-screen bg-gradient-to-b from-[#F0725C] to-[#FE3511] h-screen overflow-hidden animate-fadeIn">
       <div className="flex w-5/12 h-full relative">
         {/* Left Side Images */}
         <div className="absolute z-10 left-[-40px]">
