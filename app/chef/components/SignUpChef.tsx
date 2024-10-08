@@ -199,7 +199,7 @@ export default function SignUpChef() {
             <div className="flex justify-center items-center">
               <button
                 type="submit"
-                className="w-1/2 py-3 bg-gradient-to-b from-[#F0725C] to-[#FE3511] text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg mt-10"
+                className="w-1/2 py-3 bg-gradient-to-b from-[#F0725C] to-[#FE3511] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg mt-10"
               >
                 Sign up
               </button>
