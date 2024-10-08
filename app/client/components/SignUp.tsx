@@ -1,20 +1,22 @@
 'use client'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Image from 'next/image'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/16/solid'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link';
 
 export default function SignUp() {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
   const router = useRouter()
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev)
   }
 
-  const handleLoginRedirect = () => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     router.push('/client/login')
-  }
+  };
 
   return (
     <div className="flex justify-end items-center min-h-screen bg-gradient-to-b from-[#F0725C] to-[#FE3511] h-screen overflow-hidden animate-fadeIn">
@@ -36,7 +38,7 @@ export default function SignUp() {
 
       <div className="flex flex-col justify-center items-center bg-white rounded-l-2xl p-40 w-7/12 h-full">
         <h1 className="text-4xl font-bold mb-12 text-center w-full">Sign Up</h1>
-        <form className="flex flex-col w-full space-y-4">
+        <form onSubmit={handleSubmit} className="flex flex-col w-full space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="mb-1">First Name</p>
@@ -90,19 +92,17 @@ export default function SignUp() {
           </div>
           <button
             type="submit"
-            className="mt-6 px-6 py-3 w-full rounded-lg text-white font-semibold bg-gradient-to-b from-[#F0725C] to-[#FE3511] transition-all duration-300 transform hover:scale-[1.01] hover:shadow-lg"
-            onClick={handleLoginRedirect}
+            className="mt-6 px-6 py-3 w-full rounded-lg text-white font-semibold bg-gradient-to-b from-[#F0725C] to-[#FE3511] transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg"
           >
             Sign Up
           </button>
         </form>
         <div className="border-t-[1px] border-[#DDE1E6] mt-6 pt-4 text-center w-full">
-          <button 
-            className="text-[#001D6C] hover:underline" 
-            onClick={handleLoginRedirect}
-          >
-            Already have an account?
-          </button>
+          <Link href="/client/login">
+            <p className="text-[#001D6C] hover:underline">
+              Already have an account?
+            </p>
+          </Link>
         </div>
       </div>
     </div>
