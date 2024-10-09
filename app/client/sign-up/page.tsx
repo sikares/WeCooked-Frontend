@@ -1,9 +1,9 @@
-import SignUp from '../components/SignUp'
+import SignUp from '../components/SignUp';
 
-export default function signup() {
+export default function Signup() {
   return (
-    <div>
+    <>
       <SignUp />
-    </div>
-  )
+    </>
+  );
 }

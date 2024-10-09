@@ -5,11 +5,11 @@ import { EyeIcon, EyeSlashIcon, PhotoIcon } from '@heroicons/react/16/solid';
 
 export default function SignUpChef() {
   const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
-  const [photoFileName, setPhotoFileName] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [photoFileName, setPhotoFileName] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!photoFileName) {
       setErrorMessage('Please upload your photo.');
